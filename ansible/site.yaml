@@ -1,0 +1,23 @@
+---
+- name: Deploy application
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: Ensure the project directory exists
+      file:
+        path: /path/to/remote/directory
+        state: directory
+        owner: www-data
+        group: www-data
+
+    - name: Copy project files
+      copy:
+        src: /path/to/your/project/
+        dest: /path/to/remote/directory
+        owner: www-data
+        group: www-data
+
+    - name: Restart web server
+      service:
+        name: nginx
+        state: restarted
