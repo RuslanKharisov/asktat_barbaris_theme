@@ -21,13 +21,13 @@ jobs:
 
       - name: Deploy to VPS using Ansible
         run: |
-            echo "Current directory: $(pwd)"
-        #   mkdir -p ~/.ssh
-        #   chmod 700 ~/.ssh
-        #   echo "${{ secrets.SSH_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
-        #   chmod 644 ~/.ssh/known_hosts
-        #   ssh-keyscan ${{ secrets.REMOTE_HOST }} >> ~/.ssh/known_hosts
-        #   echo "Current directory: $(pwd)"
+          echo "Current directory: $(pwd)"
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          echo "${{ secrets.SSH_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
+          ssh-keyscan ${{ secrets.REMOTE_HOST }} >> ~/.ssh/known_hosts
+          echo "Current directory: $(pwd)"
         #   ansible-playbook -v -i ansible/inventory  ansible/site.yaml
         # env:
         #   ARGS: "-avzr --delete"
