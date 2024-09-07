@@ -21,12 +21,11 @@ jobs:
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY}}
            
-          
-          run: |
-            git config --global user.name "RuslanKharisov"
-            git config --global user.email "ruslan.kharisov@gmail.com.com"
-            echo "Checking for updates or initializing Git..."
+          port: 22
+          script: |
+            echo "Current directory: $(pwd)"
+            ls
             cd /var/www/wordpress/wp-content/themes/barbariscatalogfirst
-            git init if [ ! -d .git ]
-            git fetch --prune
-            git reset --hard origin/main
+            echo "Current directory: $(pwd)"
+            git pull origin main
+           
