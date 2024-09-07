@@ -25,7 +25,7 @@ jobs:
           script: |
             echo "Current directory: $(pwd)"
             ls
-            cd var/www/wordpress/wp-content/themes/barbariscatalogfirst
+            cd /var/www/wordpress/wp-content/themes/barbariscatalogfirst
             echo "Current directory: $(pwd)"
            # git pull origin main
            # npm ci
