@@ -51,4 +51,4 @@ jobs:
         env:
           ARGS: "-avzr --delete"
           SOURCE: "../../"
-          TARGET: "/var/www/wordpress"
+          TARGET: "/var/www/wordpress/wp-content/themes/barbariscatalogfirst"
