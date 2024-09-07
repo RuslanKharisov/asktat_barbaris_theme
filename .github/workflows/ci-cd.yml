@@ -25,9 +25,8 @@ jobs:
           echo "${{ secrets.SSH_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
           chmod 644 ~/.ssh/known_hosts
           ssh-keyscan ${{ secrets.REMOTE_HOST }} >> ~/.ssh/known_hosts
-          ssh ${{ secrets.REMOTE_HOST }} "cd /var/www/wordpress/wp-content/themes/barbariscatalogfirst && pwd"
+          echo "Current directory: $(pwd)"
           ansible-playbook -v -i ansible/inventory ansible/playbooks/site.yml
-          
         env:
           ARGS: "-avzr --delete"
           SOURCE: "../../"
