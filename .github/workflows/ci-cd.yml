@@ -22,7 +22,7 @@ jobs:
       - name: Deploy to VPS using Ansible
         run: |
           echo "Current directory: $(pwd)"
-          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}
+          ssh ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}
           echo "Current directory: $(pwd)"
         # mkdir -p ~/.ssh
         # chmod 700 ~/.ssh
