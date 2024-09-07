@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+@layer utilities {
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+}
+
+/* --- Navbar styles start --- */
+
+.navbar a:after {
+  display:block;
+  content: '';
+  border-bottom: solid 3px #334155;
+  transform: scaleX(0);  
+  transition: transform 250ms ease-in-out;
+}
+.navbar a:hover:after { transform: scaleX(1); }
+
+/* --- Navbar styles end --- */
+
+
+/* --- Carousells castom styles start --- */
+
+/* .product__carousel-cell {
+  width: 100%;
+  margin: 0 5px;
+} */
+
+/* .product__thumbnail-carousel .product__carousel-cell {
+  width: 25%; 
+  cursor: pointer;
+} */
+
+
+.home__carousel-cell {
+  width: 100%;
+  margin: 0 5px;
+}
+
+.home__thumbnail-carousel .home__carousel-cell {
+  width: 75%; 
+  cursor: pointer;
+}
+
+@media screen and ( min-width: 768px ) {
+  .home__thumbnail-carousel .home__carousel-cell{
+    width: 50%;
+  }
+}
+
+@media screen and ( min-width: 1024px ) {
+  .home__thumbnail-carousel .home__carousel-cell{
+    width: 33%;
+  }
+}
+
+@media screen and ( min-width: 1280px ) {
+  .home__thumbnail-carousel .home__carousel-cell{
+    width: 25%;
+  }
+}
+
+
+
+/* --- Carousells castom styles end --- */
+
+.option.active {
+  background-color: #3d3d3d; /* или любой другой цвет */
+  color: #e7e7e7; /* или любой другой цвет */
+}
+
+
+/* --- Neon text style start --- */
+
+@keyframes neon-flicker {
+  0%, 100% {
+    text-shadow: 
+      0 0 2px #CCD5E0, 
+      0 0 4px #667489, 
+      0 0 8px #CCD5E0, 
+      0 0 16px #667489;
+    opacity: 1;
+  }
+  50% {
+    text-shadow: 
+      0 0 1px #CCD5E0, 
+      0 0 2px #CCD5E0, 
+      0 0 4px #667489, 
+      0 0 8px #667489;
+    opacity: 0.9;
+  }
+}
+
+@layer utilities {
+  .neon-text {
+    animation: neon-flicker 3s infinite alternate;
+  }
+}
+
+/* --- Neon text style end --- */
+
+
+
+/* Также можно использовать правило для предотвращения масштабирования */
+html {
+  font-size: 100%;
+}
+
+
+
+
