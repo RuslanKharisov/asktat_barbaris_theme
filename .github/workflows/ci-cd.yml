@@ -10,7 +10,8 @@ jobs:
     name: Deploy project
     permissions:
       deployments: write
-    runs-on: self-hosted
+    runs-on: self-
+      
     
     steps:
       - name: Set up SSH Key and Deploy my App on Server
