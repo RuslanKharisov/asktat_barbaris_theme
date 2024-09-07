@@ -10,7 +10,7 @@ jobs:
     name: Deploy project
     permissions:
       deployments: write
-    runs-on: self-
+    runs-on: self-hosted
       
     
     steps:
