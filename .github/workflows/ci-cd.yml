@@ -18,7 +18,7 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-          
+
       - name: Deploy to VPS using Ansible
         run: |
           mkdir -p ~/.ssh
@@ -27,7 +27,7 @@ jobs:
           chmod 644 ~/.ssh/known_hosts
           ssh-keyscan ${{ secrets.REMOTE_HOST }} >> ~/.ssh/known_hosts
           echo "Current directory: $(pwd)"
-          ansible-playbook -v -i ansible/inventory ansible/playbooks/site.yml
+          ansible-playbook -v -i ansible/inventory ansible/site.yml
         env:
           ARGS: "-avzr --delete"
           SOURCE: "../../"
