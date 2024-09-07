@@ -21,10 +21,12 @@ jobs:
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY}}
            
-          port: 22
-          script: |
-            echo "Checking for updates..."
-            ssh -o StrictHostKeyChecking=no -i $SSH_PRIVATE_KEY $REMOTE_USER@$REMOTE_HOST 'cd /var/www/wordpress/wp-content/themes/barbariscatalogfirst && git fetch origin main'
-            echo "Pulling changes..."
-            ssh -o StrictHostKeyChecking=no -i $SSH_PRIVATE_KEY $REMOTE_USER@$REMOTE_HOST 'cd /var/www/wordpress/wp-content/themes/barbariscatalogfirst && git reset --hard origin/main'
-           
+          
+          run: |
+            git config --global user.name "RuslanKharisov"
+            git config --global user.email "ruslan.kharisov@gmail.com.com"
+            echo "Checking for updates or initializing Git..."
+            cd /var/www/wordpress/wp-content/themes/barbariscatalogfirst
+            git init if [ ! -d .git ]
+            git fetch --prune
+            git reset --hard origin/main
