@@ -1,2 +1,4 @@
-[inventory]
-enable_plugins = yaml, ini
+hosts:
+  localhost:
+   vars:
+     ansible_connection: local
