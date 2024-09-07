@@ -6,32 +6,42 @@ on:
       - main
 
 jobs:
-  build:
+  deploy:
+    name: Deploy project
+    permissions:
+      deployments: write
     runs-on: ubuntu-latest
     
     steps:
-      - name: Checkout code
+      - name: Checkout Repository
         uses: actions/checkout@v2
-
-      - name: Set up SSH
-        uses: webfactory/ssh-agent@v0.5.3
         with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
-
-      - name: Deploy to VPS using Ansible
-        run: |
-          echo "Current directory: $(pwd)"
-          ssh ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}
-          echo "Current directory: $(pwd)"
-        # mkdir -p ~/.ssh
-        # chmod 700 ~/.ssh
-        # echo "${{ secrets.SSH_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
-        # chmod 644 ~/.ssh/known_hosts
-        # ssh-keyscan ${{ secrets.REMOTE_HOST }} >> ~/.ssh/known_hosts
-        # echo "Current directory: $(pwd)"
-        #   ansible-playbook -v -i ansible/inventory  ansible/site.yaml
-        # env:
-        #   ARGS: "-avzr --delete"
-        #   SOURCE: "../../"
-        #   TARGET: "/var/www/wordpress/wp-content/themes/barbariscatalogfirst"
+          ref: main
+          token: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
+      - name: Create GitHub deployment
+        uses: chrnorm/deployment-action@v2
+        id: deployment
+        with:
+          token: '${{ github.token }}'
+          environment-url: ${{ vars.MY_APP }}
+          environment: production
+      - name: Set up SSH Key and Deploy my App on Server
+        # run: |
+        uses: appleboy/ssh-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY}}
+          passphrase: 
+          port: 22
+          script: |
+            git config --global url."https://${{ secrets.PERSONAL_GITHUB_TOKEN }}:@github.com".insteadOf "https://github.com"
+            echo "Current directory: $(pwd)"
+            cd var/www/wordpress/wp-content/themes/barbariscatalogfirst
+            echo "Current directory: $(pwd)"
+            git pull origin main
+           # npm ci
+           # npm run frontend
+           # pm2 restart chatg --update-env
