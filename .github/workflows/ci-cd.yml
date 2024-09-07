@@ -20,10 +20,11 @@ jobs:
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY}}
-          passphrase: 
+           
           port: 22
           script: |
             echo "Current directory: $(pwd)"
+            ls
             cd var/www/wordpress/wp-content/themes/barbariscatalogfirst
             echo "Current directory: $(pwd)"
            # git pull origin main
