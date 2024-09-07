@@ -16,7 +16,7 @@
           <?php the_title(); ?>
         </h3>
         <div class="mt-1 flex gap-3 justify-center items-end">
-          <p class="text-sm lg:text-base">от
+          <p class="text-sm font-semibold lg:text-base">от
             <?php echo carbon_get_post_meta(get_the_ID(), 'product-price-regular'); ?> Руб.
           </p>
         </div>
