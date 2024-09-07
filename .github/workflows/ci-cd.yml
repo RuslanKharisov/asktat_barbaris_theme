@@ -23,11 +23,8 @@ jobs:
            
           port: 22
           script: |
-            echo "Current directory: $(pwd)"
-            ls
-            cd /var/www/wordpress/wp-content/themes/barbariscatalogfirst
-            echo "Current directory: $(pwd)"
-           # git pull origin main
-           # npm ci
-           # npm run frontend
-           # pm2 restart chatg --update-env
+            echo "Checking for updates..."
+            ssh -o StrictHostKeyChecking=no -i $SSH_PRIVATE_KEY $REMOTE_USER@$REMOTE_HOST 'cd /var/www/wordpress/wp-content/themes/barbariscatalogfirst && git fetch origin main'
+            echo "Pulling changes..."
+            ssh -o StrictHostKeyChecking=no -i $SSH_PRIVATE_KEY $REMOTE_USER@$REMOTE_HOST 'cd /var/www/wordpress/wp-content/themes/barbariscatalogfirst && git reset --hard origin/main'
+           
