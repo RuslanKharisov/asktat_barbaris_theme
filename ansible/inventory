@@ -1,1 +1,1 @@
-ansible-playbook -i ansible/inventory site.yml
+ansible-playbook -i ansible/inventory 

@@ -1,7 +1,7 @@
 ---
 - name: Deploy application
   hosts: localhost
-  become: yes
+  become: true
   tasks:
     - name: Ensure the project directory exists
       file:
