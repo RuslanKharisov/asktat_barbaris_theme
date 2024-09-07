@@ -27,7 +27,6 @@ jobs:
           chmod 644 ~/.ssh/known_hosts
           ssh-keyscan ${{ secrets.REMOTE_HOST }} >> ~/.ssh/known_hosts
           echo "Current directory: $(pwd)"
-          ansible all --list-hosts
           ansible-playbook -v -i ansible/inventory  ansible/site.yaml
         env:
           ARGS: "-avzr --delete"

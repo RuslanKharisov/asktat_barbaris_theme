@@ -5,15 +5,15 @@
   tasks:
     - name: Ensure the project directory exists
       file:
-        path: /path/to/remote/directory
-        state: directory
+        path: /var/www/wordpress/wp-content/themes/barbariscatalogfirst
+        state: .
         owner: www-data
         group: www-data
 
     - name: Copy project files
       copy:
-        src: /path/to/your/project/
-        dest: /path/to/remote/directory
+        src: .
+        dest: /var/www/wordpress/wp-content/themes/barbariscatalogfirst
         owner: www-data
         group: www-data
 
