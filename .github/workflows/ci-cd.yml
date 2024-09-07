@@ -28,7 +28,7 @@ jobs:
           ssh-keyscan ${{ secrets.REMOTE_HOST }} >> ~/.ssh/known_hosts
           echo "Current directory: $(pwd)"
           ls
-          ansible-playbook -v -i ansible/inventory ansible/site.yml
+          ansible-playbook -v -i ansible/inventory  ansible/site.yaml
         env:
           ARGS: "-avzr --delete"
           SOURCE: "../../"
