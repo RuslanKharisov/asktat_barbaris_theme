@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (validateForm()) {
           const formData = new FormData(this);
 
-          fetch('/functions.php', {
+          fetch('../../functions.php', {
             method: 'POST',
             body: formData,
           })
