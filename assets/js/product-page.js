@@ -65,9 +65,14 @@ document.addEventListener('DOMContentLoaded', function () {
             .then((response) => response.json())
             .then((data) => {
               if (data.success) {
-                window.location.href = data.whatsapp_link;
+                console.log("🚀 ~ .then ~ data:", data)
+                // window.location.href = data.whatsapp_link;
+                
+                const whatsappLink = `https://wa.me/${data.whatsapp_number}?text=${decodeURIComponent(data.message)}`;
+                // window.open(whatsappLink, '_blank');
+                console.log("🚀 ~ .then ~ data.whatsapp_link:", whatsappLink)
               } else {
-                alert('Ошибка при отправке данных: ' + data.message);
+                alert('Ошибка при отправке данных: ' + data.message_encoded);
               }
             })
             .catch((error) => console.error('Ошибка:', error));
