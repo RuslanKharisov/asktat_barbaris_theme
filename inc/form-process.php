@@ -1,6 +1,6 @@
 <?php
 
-add_action('wp_loaded', function() {
+add_action('admin_init', function() {
   if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       if (isset($_POST['form_identifier']) && $_POST['form_identifier'] == 'product_rqst_form') {
           $name = htmlspecialchars($_POST['name']);
