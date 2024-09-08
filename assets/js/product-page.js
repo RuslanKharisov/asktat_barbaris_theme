@@ -65,12 +65,9 @@ document.addEventListener('DOMContentLoaded', function () {
             .then((response) => response.json())
             .then((data) => {
               if (data.success) {
-                console.log("🚀 ~ .then ~ data:", data)
-                // window.location.href = data.whatsapp_link;
-                
                 const whatsappLink = `https://wa.me/${data.whatsapp_number}?text=${decodeURIComponent(data.message)}`;
-                // window.open(whatsappLink, '_blank');
-                console.log("🚀 ~ .then ~ data.whatsapp_link:", whatsappLink)
+                window.open(whatsappLink, '_blank');
+                
               } else {
                 alert('Ошибка при отправке данных: ' + data.message_encoded);
               }

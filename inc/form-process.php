@@ -14,12 +14,8 @@ add_action('admin_init', function() {
           // Номер телефона, на который будет отправлено сообщение (в международном формате без плюса)
           $whatsapp_number = carbon_get_theme_option('crb_whatsapp');
           
-
-          // Создание ссылки для отправки сообщения в WhatsApp
-          // $whatsapp_link = "https://wa.me/$whatsapp_number?text=$message";
-
           // Возвращаем JSON-ответ с ссылкой
-          // echo json_encode(['success' => true, 'whatsapp_link' => $whatsapp_link]);
+          
           echo json_encode(['success' => true, 'whatsapp_number' => $whatsapp_number, 'message' => $message_encoded]);
           exit();
       }
