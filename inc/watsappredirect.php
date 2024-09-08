@@ -10,8 +10,6 @@ add_action('rest_api_init', function () {
 function redirect_to_whatsapp(WP_REST_Request $request) {
     $phone = sanitize_text_field($request->get_param('phone'));
     $name = sanitize_text_field($request->get_param('name'));
-    $size = sanitize_text_field($request->get_param('selected_size'));
-    $color = sanitize_text_field($request->get_param('selected_color'));
 
     $api_url = "https://api.whatsapp.com/send?phone={$phone}&text=" . urlencode($text);
 
