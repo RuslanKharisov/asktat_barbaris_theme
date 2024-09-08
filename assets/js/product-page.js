@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-  
-
   // form logic
   const sizebuttons = document.querySelectorAll('.size-option');
   const totalPriceField = document.querySelector('.product-price');
