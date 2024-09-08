@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .then((response) => response.json())
             .then((data) => {
               if (data.success) {
-                const whatsappLink = `intent://send/${data.whatsapp_number}?text=${encodeURIComponent(data.message)}#Intent;scheme=smsto;package=com.whatsapp`;
+                const whatsappLink = `intent://send/${data.whatsapp_link}?text=${encodeURIComponent(data.message)}#Intent;scheme=smsto;package=com.whatsapp`;
                 console.log("🚀 ~ .then ~ whatsappLink:", whatsappLink)
                 window.open(whatsappLink, '_blank');
               } else {
