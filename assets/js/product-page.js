@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-  
-
   // form logic
   const sizebuttons = document.querySelectorAll('.size-option');
   const totalPriceField = document.querySelector('.product-price');
@@ -57,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (validateForm()) {
           const formData = new FormData(this);
 
-          fetch('functions.php', {
+          fetch('/functions.php', {
             method: 'POST',
             body: formData,
           })
