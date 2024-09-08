@@ -55,9 +55,12 @@ document.addEventListener('DOMContentLoaded', function () {
         if (validateForm()) {
           const formData = new FormData(this);
 
-          fetch('/wp-content/themes/your-theme/functions.php', {
+          fetch(`${window.location.origin}/wp-admin/admin-ajax.php`, {
             method: 'POST',
-            body: formData,
+            body: `action=your_action&${new URLSearchParams(formData).toString()}`,
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded',
+            },
           })
             .then((response) => response.json())
             .then((data) => {
