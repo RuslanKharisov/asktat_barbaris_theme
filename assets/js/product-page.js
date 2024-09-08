@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (validateForm()) {
           const formData = new FormData(this);
 
-          fetch('functions.php', {
+          fetch('/wp-content/themes/your-theme/functions.php', {
             method: 'POST',
             body: formData,
           })
