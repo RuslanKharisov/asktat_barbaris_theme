@@ -57,7 +57,7 @@
         </a>
       </div>
       <div class="carousel mt-4"
-        data-flickity='{"wrapAround": true, "contain": true, "pageDots": false, "prevNextButtons": false }'>
+        data-flickity='{"contain": true, "pageDots": false, "prevNextButtons": false }'>
 
         <?php while ($query->have_posts()):
           $query->the_post();
