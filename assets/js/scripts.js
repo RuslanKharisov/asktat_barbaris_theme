@@ -10,26 +10,25 @@ document.addEventListener('DOMContentLoaded', function () {
     closeIcon.classList.toggle('hidden');
   })
 
-  var mainCarousel = document.querySelectorAll('.main-carousel');
-  var thumbnailCarousel = document.querySelectorAll('.thumbnail-carousel');
+  // var mainCarousel = document.querySelectorAll('.main-carousel');
+  // var thumbnailCarousel = document.querySelectorAll('.thumbnail-carousel');
 
-  try {
-    if (mainCarousel) {
-      var flktyMain = new Flickity(mainCarousel, {
-        pageDots: false,
-        prevNextButtons: false,
-        wrapAround: true,
-      });
-    }
-
-    var flktyThumb = new Flickity(thumbnailCarousel, {
-      asNavFor: '.main-carousel',
-      contain: true,
-      pageDots: false,
-      prevNextButtons: false,
-    });
-  } catch (error) {}
-
-
+  // try {
+  //   if (mainCarousel) {
+  //     var flktyMain = new Flickity(mainCarousel, {
+  //       pageDots: false,
+  //       prevNextButtons: false,
+  //       wrapAround: true,
+  //     });
+  //   }
+  //   if (thumbnailCarousel.length > 0) {
+  //   var flktyThumb = new Flickity(thumbnailCarousel, {
+  //     asNavFor: '.main-carousel',
+  //     contain: true,
+  //     pageDots: false,
+  //     prevNextButtons: false,
+  //   });
+  // }
+  // } catch (error) {}
 
 });

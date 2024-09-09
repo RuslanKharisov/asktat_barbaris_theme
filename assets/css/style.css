@@ -34,46 +34,39 @@
 
 /* --- Carousells castom styles start --- */
 
-/* .product__carousel-cell {
-  width: 100%;
-  margin: 0 5px;
-} */
-
-/* .product__thumbnail-carousel .product__carousel-cell {
-  width: 25%; 
-  cursor: pointer;
-} */
-
-
 .home__carousel-cell {
-  width: 100%;
+  width: 75%;
   margin: 0 5px;
 }
 
-.home__thumbnail-carousel .home__carousel-cell {
+.home__thumbnail-carousel {
   width: 75%; 
   cursor: pointer;
 }
 
 @media screen and ( min-width: 768px ) {
-  .home__thumbnail-carousel .home__carousel-cell{
+  .home__thumbnail-carousel{
     width: 50%;
+  }
+
+  .home__carousel-cell {
+    width: 30%;
+    margin: 0 10px;
   }
 }
 
 @media screen and ( min-width: 1024px ) {
-  .home__thumbnail-carousel .home__carousel-cell{
-    width: 33%;
+  .home__carousel-cell {
+    width: 25%;
+    margin: 0 10px;
   }
 }
 
 @media screen and ( min-width: 1280px ) {
-  .home__thumbnail-carousel .home__carousel-cell{
+  .home__thumbnail-carousel{
     width: 25%;
   }
 }
-
-
 
 /* --- Carousells castom styles end --- */
 

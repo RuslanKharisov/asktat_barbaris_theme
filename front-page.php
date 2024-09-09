@@ -56,8 +56,8 @@
           Перейти в каталог
         </a>
       </div>
-      <div class="thumbnail-carousel home__thumbnail-carousel mt-4"
-        data-flickity='{"groupCells": true, "contain": true, "pageDots": false, "prevNextButtons": false }'>
+      <div class="carousel mt-4"
+        data-flickity='{"wrapAround": true, "contain": true, "pageDots": false, "prevNextButtons": false }'>
 
         <?php while ($query->have_posts()):
           $query->the_post();

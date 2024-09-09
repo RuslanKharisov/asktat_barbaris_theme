@@ -610,11 +610,11 @@ video {
 .mt-1 {
   margin-top: 0.25rem;
 }
+.mt-10 {
+  margin-top: 2.5rem;
+}
 .mt-4 {
   margin-top: 1rem;
-}
-.mt-5 {
-  margin-top: 1.25rem;
 }
 .block {
   display: block;
@@ -667,11 +667,11 @@ video {
 .h-full {
   height: 100%;
 }
+.max-h-\[400px\] {
+  max-height: 400px;
+}
 .min-h-screen {
   min-height: 100vh;
-}
-.w-1\/4 {
-  width: 25%;
 }
 .w-1\/5 {
   width: 20%;
@@ -688,18 +688,15 @@ video {
 .w-80 {
   width: 20rem;
 }
+.w-\[150px\] {
+  width: 150px;
+}
 .w-fit {
   width: -moz-fit-content;
   width: fit-content;
 }
 .w-full {
   width: 100%;
-}
-.w-\[100px\] {
-  width: 100px;
-}
-.w-\[150px\] {
-  width: 150px;
 }
 .max-w-\[320px\] {
   max-width: 320px;
@@ -737,14 +734,8 @@ video {
 .auto-cols-min {
   grid-auto-columns: min-content;
 }
-.grid-flow-row {
-  grid-auto-flow: row;
-}
 .grid-flow-col {
   grid-auto-flow: column;
-}
-.grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 .grid-rows-2 {
   grid-template-rows: repeat(2, minmax(0, 1fr));
@@ -1062,46 +1053,39 @@ video {
 
 /* --- Carousells castom styles start --- */
 
-/* .product__carousel-cell {
-  width: 100%;
-  margin: 0 5px;
-} */
-
-/* .product__thumbnail-carousel .product__carousel-cell {
-  width: 25%; 
-  cursor: pointer;
-} */
-
-
 .home__carousel-cell {
-  width: 100%;
+  width: 75%;
   margin: 0 5px;
 }
 
-.home__thumbnail-carousel .home__carousel-cell {
+.home__thumbnail-carousel {
   width: 75%; 
   cursor: pointer;
 }
 
 @media screen and ( min-width: 768px ) {
-  .home__thumbnail-carousel .home__carousel-cell{
+  .home__thumbnail-carousel{
     width: 50%;
+  }
+
+  .home__carousel-cell {
+    width: 30%;
+    margin: 0 10px;
   }
 }
 
 @media screen and ( min-width: 1024px ) {
-  .home__thumbnail-carousel .home__carousel-cell{
-    width: 33%;
+  .home__carousel-cell {
+    width: 25%;
+    margin: 0 10px;
   }
 }
 
 @media screen and ( min-width: 1280px ) {
-  .home__thumbnail-carousel .home__carousel-cell{
+  .home__thumbnail-carousel{
     width: 25%;
   }
 }
-
-
 
 /* --- Carousells castom styles end --- */
 
