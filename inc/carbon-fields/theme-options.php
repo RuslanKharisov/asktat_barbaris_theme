@@ -30,13 +30,5 @@ function crb_attach_theme_options() {
             Field::make('text', 'step_item_title', 'Заголовок шага'),
             Field::make('textarea', 'step_item_description', 'Описание шага'),
           ]),
-        ])
-        ->add_tab( 'Секция инфо на главной',  [
-          
-            Field::make('text', 'crb_lighting_section_title', __('Заголовок секции'))
-                ->set_help_text(__('Введите заголовок секции')),
-            Field::make('textarea', 'crb_lighting_section_description', __('Техтовое поле секции'))
-                ->set_help_text(__('Введите текст секции')),
-              
         ]);
 }

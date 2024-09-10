@@ -4,7 +4,7 @@
   <main class="grow min-h-screen flex flex-col">
 
     <!-- Секция баннера #1 -->
-    <section class="w-full md:pt-12 bg-primary-100 flex flex-col items-center justify-center">
+    <section class="w-full py-10 bg-primary-100 flex flex-col items-center justify-center">
       <?php
       // Устанавливаем переменную с названием баннера
       set_query_var('banner_title', 'banner №1');
@@ -12,22 +12,6 @@
       // Подключаем шаблонный файл banner-gallery.php
       get_template_part('template-parts/banner-gallery');
       ?>
-    </section>
-
-    <!-- Секция с текстом -->
-    <section class="max-w-screen-xl mx-auto px-1 md:px-20 md:py-10">
-      <div class="flex flex-col gap-5 items-center justify-center pt-10 lg-py-20 text-center">
-        <h1 class="text-xl uppercase font-semibold">
-          <?php echo esc_html(
-            carbon_get_theme_option('crb_lighting_section_title')
-          ); ?>
-        </h1>
-        <p class="font-light">
-          <?php echo esc_html(
-            carbon_get_theme_option('crb_lighting_section_description')
-          ); ?>
-        </p>
-      </div>
     </section>
 
     <!-- Секция карусели каталога категории #1 -->
@@ -56,8 +40,7 @@
           Перейти в каталог
         </a>
       </div>
-      <div class="carousel mt-4"
-        data-flickity='{"contain": true, "pageDots": false, "prevNextButtons": false }'>
+      <div class="carousel mt-4" data-flickity='{"contain": true, "pageDots": false, "prevNextButtons": false }'>
 
         <?php while ($query->have_posts()):
           $query->the_post();
@@ -71,6 +54,16 @@
       </div>
     </section>
 
+        <!-- Секция баннера #2 -->
+        <section class="w-full py-10 bg-primary-100 flex flex-col items-center justify-center">
+      <?php
+      // Устанавливаем переменную с названием баннера
+      set_query_var('banner_title', 'banner №2');
+
+      // Подключаем шаблонный файл banner-gallery.php
+      get_template_part('template-parts/banner-gallery');
+      ?>
+    </section>
 
 
 

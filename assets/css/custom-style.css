@@ -911,6 +911,10 @@ video {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
 .pl-3 {
   padding-left: 0.75rem;
 }
@@ -922,6 +926,9 @@ video {
 }
 .pt-8 {
   padding-top: 2rem;
+}
+.pt-12 {
+  padding-top: 3rem;
 }
 .text-center {
   text-align: center;
